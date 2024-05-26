@@ -22,6 +22,7 @@ class Graph:
             'uniform': 0
         }
         self.stop_depth = False
+        self.stop_a_star = False
 
     def breadth_first(self):
         queue = [self.nodes[0]]
@@ -117,13 +118,14 @@ class Graph:
         """
 
         def a_star_search(node):
-            if node is None:
+            if node is None or self.stop_a_star:
                 return
 
             print(node.value, end=" ")
             self.vists['a_star'] += 1
 
             if node.goal:
+                self.stop_a_star = True
                 return
 
             if node.left is not None and node.right is not None:
