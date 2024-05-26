@@ -50,4 +50,5 @@ if __name__ == '__main__':
     print("Greedy Visits: ", graph.get_visits('greedy'))
     print("A* Visits: ", graph.get_visits('a_star'))
     print("Uniform Visits: ", graph.get_visits('uniform'))
+    print("Goal List: " + ", ".join([str(node.value) for node in filter(lambda x: x.goal, graph.nodes)]))
     generate_graphviz(graph, "graphviz_output")
