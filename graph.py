@@ -21,6 +21,7 @@ class Graph:
             'a_star': 0,
             'uniform': 0
         }
+        self.stop_depth = False
 
     def breadth_first(self):
         queue = [self.nodes[0]]
@@ -37,12 +38,14 @@ class Graph:
         print()
 
     def depth_first(self):
+
         def traverse_pre_order(node: Node):
-            if node is None:
+            if node is None or self.stop_depth:
                 return
             print(node.value, end=" ")
             self.vists['dfs'] += 1
             if node.goal:
+                self.stop_depth = True
                 return
             traverse_pre_order(node.left)
             traverse_pre_order(node.right)
