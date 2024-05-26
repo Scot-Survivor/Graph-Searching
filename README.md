@@ -20,6 +20,8 @@ python3 main.py
 ```
 
 ### Example Output
+### Image
+![Graph](https://github.com/Scot-Survivor/Graph-Searching/blob/master/docs/example.png?raw=true)
 #### Print Output
 ```shell
 Enter number of nodes: 4
