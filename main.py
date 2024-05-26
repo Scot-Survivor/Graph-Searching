@@ -25,10 +25,11 @@ def generate_graphviz(graph: Graph, filename: str = "graphviz_output"):
 
 
 if __name__ == '__main__':
-    nodes = int(input("Enter number of nodes: "))
-    max_cost = int(input("Enter max cost: "))
-    max_heuristic = int(input("Enter max heuristic: "))
-    graph = generate_random_graph_connected(nodes, max_cost, max_heuristic)
+    nodes = int(input("Enter number of nodes: ").strip() or "10")
+    max_cost = int(input("Enter max cost: ").strip() or "11")
+    max_heuristic = int(input("Enter max heuristic: ").strip() or "11")
+    max_goals = int(input("Enter number of goals: ").strip() or "1")
+    graph = generate_random_graph_connected(nodes, max_cost, max_heuristic, max_goals)
     g_height = graph.get_height()
     print(g_height*5 * ' ' + "GRAPH")
     graph.display_graph()
