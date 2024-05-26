@@ -12,7 +12,8 @@ Allows you to search for a path between two nodes in a graph using different alg
 ```shell
 pip3 install -r requirements.txt
 ```
-You also need to install [Graphviz](https://graphviz.org/download/) to visualize the graph.
+You also need to download the installer [Graphviz](https://graphviz.org/download/) to visualize the graph.
+Remember to tick "add file to PATH" in order for this script to function.
 
 ### Usage
 ```shell
