@@ -59,4 +59,5 @@ if __name__ == '__main__':
         generate_graphviz(graph, "graphviz_output")
     except Exception as e:
         print("Error generating graphviz: ", e)
+        print("Traceback: ", e.__traceback__)
         print("Please install graphviz and add it to your PATH.")
