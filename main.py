@@ -55,4 +55,8 @@ if __name__ == '__main__':
     print("Number of Goals: ", len(list(filter(lambda x: x.goal, graph.nodes))))
     print("\n")
     print("Goal List: " + ", ".join([str(node.value) for node in filter(lambda x: x.goal, graph.nodes)]))
-    generate_graphviz(graph, "graphviz_output")
+    try:
+        generate_graphviz(graph, "graphviz_output")
+    except Exception as e:
+        print("Error generating graphviz: ", e)
+        print("Please install graphviz and add it to your PATH.")
