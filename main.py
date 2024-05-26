@@ -55,9 +55,12 @@ if __name__ == '__main__':
     print("Number of Goals: ", len(list(filter(lambda x: x.goal, graph.nodes))))
     print("\n")
     print("Goal List: " + ", ".join([str(node.value) for node in filter(lambda x: x.goal, graph.nodes)]))
-    try:
-        generate_graphviz(graph, "graphviz_output")
-    except Exception as e:
-        print("Error generating graphviz: ", e)
-        print("Traceback: ", e.__traceback__)
-        print("Please install graphviz and add it to your PATH.")
+    if nodes < 10_000:
+        try:
+            generate_graphviz(graph, "graphviz_output")
+        except Exception as e:
+            print("Error generating graphviz: ", e)
+            print("Traceback: ", e.__traceback__)
+            print("Please install graphviz and add it to your PATH.")
+    else:
+        print("Graph too large to generate graphviz.")
